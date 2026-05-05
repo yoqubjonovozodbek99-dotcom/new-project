@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional developer portfolio website" />
+  <title>Alex Carter | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">Alex<span>Carter</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-content fade-up">
+        <p class="intro">Hello, I am</p>
+        <h1>Alex Carter</h1>
+        <h2>Frontend Developer & UI Engineer</h2>
+        <p class="hero-text">
+          I design and build fast, accessible, and delightful web experiences with modern
+          technologies.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="card-glow">Building digital products that matter.</div>
+      </div>
+    </section>
+
+    <section id="about" class="section container reveal">
+      <h3>About Me</h3>
+      <p>
+        I am a passionate developer with 5+ years of experience creating responsive web apps.
+        I enjoy translating complex problems into elegant interfaces and maintainable code.
+      </p>
+      <p>
+        My focus is on performance, clean architecture, and delivering user-centered solutions
+        that support business goals.
+      </p>
+    </section>
+
+    <section id="skills" class="section container reveal">
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-head">
+            <span>HTML</span><span>95%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head">
+            <span>CSS</span><span>90%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head">
+            <span>JavaScript</span><span>88%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head">
+            <span>React</span><span>85%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container reveal">
+      <h3>Projects</h3>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-overlay">
+            <h4>E-Commerce Platform</h4>
+            <p>Modern storefront with cart, checkout, and analytics dashboard.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-overlay">
+            <h4>Task Management App</h4>
+            <p>Productivity app with drag-and-drop boards and team collaboration.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-overlay">
+            <h4>Travel Booking UI</h4>
+            <p>Responsive booking interface focused on smooth user journeys.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container reveal">
+      <h3>Contact Me</h3>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+          <small class="error-text"></small>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <small class="error-text"></small>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell me about your project"
+            required
+          ></textarea>
+          <small class="error-text"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Alex Carter. Crafted with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
