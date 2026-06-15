@@ -1,157 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional developer portfolio website" />
-  <title>Alex Carter | Developer Portfolio</title>
+  <meta name="description" content="Yoqubjonov Ozodbek — marketolog, grafik dizayner va dasturchi. Uzum Market tajribasi, video/foto montaj, kartochka yaratish va onlayn marketing xizmatlari." />
+  <title>Ozodbek Yoqubjonov | Marketolog & Dizayner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
     <nav class="nav container">
-      <a href="#home" class="logo">Alex<span>Carter</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+      <a href="#home" class="logo">Ozodbek<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menyu">☰</button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="#story" data-i18n="nav.story">Hikoyam</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Ko'nikmalar</a></li>
+        <li><a href="#services" data-i18n="nav.services">Xizmatlar</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Savollar</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Aloqa</a></li>
       </ul>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light mode">
-        <span class="theme-icon">🌙</span>
-      </button>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Til tanlash">
+          <button type="button" class="lang-btn active" data-lang="uz">UZ</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Mavzu">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section id="home" class="hero container">
       <div class="hero-content fade-up">
-        <p class="intro">Hello, I am</p>
-        <h1>Alex Carter</h1>
-        <h2>Frontend Developer & UI Engineer</h2>
-        <p class="hero-text">
-          I design and build fast, accessible, and delightful web experiences with modern
-          technologies.
+        <p class="eyebrow" data-i18n="hero.eyebrow">Salom, men</p>
+        <h1>Yoqubjonov Ozodbek</h1>
+        <p class="hero-roles" data-i18n="hero.roles">Marketolog · Grafik dizayner · Dasturchi</p>
+        <p class="hero-text" data-i18n="hero.text">
+          Uzum Market sohasida 1,5 yillik tajribaga ega — sotuv menejeri va video/foto montajchi sifatida ishlaganman.
+          Hozirda kompyuter texnologiyalari va DevOps yo'nalishida o'z bilimimni oshirib bormoqdaman.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Hire Me</a>
+          <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.cta1">Telegram orqali yozing</a>
+          <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">Xizmatlarim</a>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-item">
+            <strong>4+</strong>
+            <span data-i18n="trust.years">Yillik tajriba</span>
+          </div>
+          <div class="trust-item">
+            <strong>1.5</strong>
+            <span data-i18n="trust.uzum">Yil Uzum Market</span>
+          </div>
+          <div class="trust-item">
+            <strong>3</strong>
+            <span data-i18n="trust.roles">Kasb yo'nalishi</span>
+          </div>
         </div>
       </div>
       <div class="hero-visual fade-in">
+        <div class="profile-frame">
+          <div class="profile-photo" id="profilePhoto">
+            <span class="profile-initials">OY</span>
+            <img src="assets/photos/profile.jpg" alt="Ozodbek Yoqubjonov" onerror="this.style.display='none'" />
+          </div>
+          <div class="profile-badge" data-i18n="hero.badge">Onlayn ishlayman</div>
+        </div>
         <div class="orb orb-one"></div>
         <div class="orb orb-two"></div>
-        <div class="card-glow">Building digital products that matter.</div>
       </div>
     </section>
 
-    <section id="about" class="section container reveal">
-      <h3>About Me</h3>
-      <p>
-        I am a passionate developer with 5+ years of experience creating responsive web apps.
-        I enjoy translating complex problems into elegant interfaces and maintainable code.
-      </p>
-      <p>
-        My focus is on performance, clean architecture, and delivering user-centered solutions
-        that support business goals.
-      </p>
+    <section id="story" class="section container reveal">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="story.tag">Kimman?</span>
+        <h2 data-i18n="story.title">Mening hikoyam</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p data-i18n="story.p1">
+            Men Namangan viloyati, Toraqorg'on tumanidanman. 7-sinfdan kompyuter sohasiga qiziqib,
+            uni mukammal o'rganishga harakat qilib kelganman.
+          </p>
+          <p data-i18n="story.p2">
+            Birinchi kompyuter ishlarimni 9-sinfda boshladim — onlayn platformalarda Upwork va Instagram orqali ishladim.
+            Birinchi qilgan ishim logotip yaratish edi.
+          </p>
+          <p data-i18n="story.p3">
+            Keyin Uzum Marketda ish boshladim: foto/video montaj qilib, kartochkalar yaratdim, ularni onlayn
+            platformalarga joyladim va yaxshi daromad qildim.
+          </p>
+          <p data-i18n="story.p4">
+            Savdo menejeri bo'lish uchun ko'plab katta savdogarlarning — Uzum va Yandexda savdo qiladiganlarning —
+            yopiq konferensiyalariga bordim va amaliy tajriba oldim.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-year">7-sinf</span>
+            <h4 data-i18n="timeline.t1.title">Kompyuterga qiziqish</h4>
+            <p data-i18n="timeline.t1.text">IT sohasiga birinchi qadam — o'rganish va tajriba olish boshlandi.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-year">9-sinf</span>
+            <h4 data-i18n="timeline.t2.title">Birinchi onlayn ishlar</h4>
+            <p data-i18n="timeline.t2.text">Upwork va Instagram orqali logotip va dizayn buyurtmalari.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-year">Uzum</span>
+            <h4 data-i18n="timeline.t3.title">Uzum Market tajribasi</h4>
+            <p data-i18n="timeline.t3.text">Video/foto montaj, kartochka yaratish va sotuv menejmenti — 1,5 yil.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-year" data-i18n="timeline.t4.year">Hozir</span>
+            <h4 data-i18n="timeline.t4.title">DevOps va dasturlash</h4>
+            <p data-i18n="timeline.t4.text">Kompyuter texnologiyalari va DevOps yo'nalishida bilimni chuqurlashtirish.</p>
+          </article>
+        </div>
+      </div>
+      <div class="info-cards">
+        <article class="info-card">
+          <h4 data-i18n="info.edu.title">Ta'lim</h4>
+          <p data-i18n="info.edu.text">11 yil maktab, o'rta maxsus — 2024 yilda tamomlaganman.</p>
+        </article>
+        <article class="info-card">
+          <h4 data-i18n="info.lang.title">Tillar</h4>
+          <p data-i18n="info.lang.text">O'zbek tili — C2 · Ingliz tili — B1</p>
+        </article>
+        <article class="info-card">
+          <h4 data-i18n="info.location.title">Manzil</h4>
+          <p data-i18n="info.location.text">Namangan viloyati, Toraqorg'on tumani</p>
+        </article>
+      </div>
     </section>
 
     <section id="skills" class="section container reveal">
-      <h3>Skills</h3>
+      <div class="section-head">
+        <span class="section-tag" data-i18n="skills.tag">Nimalarni bilaman?</span>
+        <h2 data-i18n="skills.title">Ko'nikmalar</h2>
+      </div>
       <div class="skills-grid">
         <div class="skill-item">
-          <div class="skill-head">
-            <span>HTML</span><span>95%</span>
-          </div>
-          <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
+          <div class="skill-head"><span data-i18n="skills.s1">Grafik dizayn & logotip</span><span>92%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="92%"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-head">
-            <span>CSS</span><span>90%</span>
-          </div>
+          <div class="skill-head"><span data-i18n="skills.s2">Video & foto montaj</span><span>90%</span></div>
           <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-head">
-            <span>JavaScript</span><span>88%</span>
-          </div>
+          <div class="skill-head"><span data-i18n="skills.s3">Marketpleys kartochkalari</span><span>95%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span data-i18n="skills.s4">Marketing & sotuv</span><span>88%</span></div>
           <div class="progress-track"><div class="progress-fill" data-width="88%"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-head">
-            <span>React</span><span>85%</span>
-          </div>
-          <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+          <div class="skill-head"><span data-i18n="skills.s5">Kompyuter & dasturlash</span><span>80%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
         </div>
+        <div class="skill-item">
+          <div class="skill-head"><span data-i18n="skills.s6">Onlayn platformalar</span><span>93%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="93%"></div></div>
+        </div>
+      </div>
+      <p class="skills-note" data-i18n="skills.note">
+        Kompyuterni chuqurroq o'rganaman. Video va foto dizaynda nimalarga e'tibor berish kerakligini bilaman —
+        4 yillik amaliy tajribaga egaman.
+      </p>
+    </section>
+
+    <section id="services" class="section container reveal">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="services.tag">Nima qilaman?</span>
+        <h2 data-i18n="services.title">Xizmatlar</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3 data-i18n="services.c1.title">Grafik dizayn</h3>
+          <p data-i18n="services.c1.text">Logotip, brending, ijtimoiy tarmoq uchun vizual kontent yaratish.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">🎬</div>
+          <h3 data-i18n="services.c2.title">Video & foto montaj</h3>
+          <p data-i18n="services.c2.text">Mahsulot uchun professional video va foto tahrirlash, reklama materiallari.</p>
+        </article>
+        <article class="service-card featured">
+          <div class="service-icon">📦</div>
+          <h3 data-i18n="services.c3.title">Marketpleys kartochkalari</h3>
+          <p data-i18n="services.c3.text">Uzum, Yandex va boshqa platformalar uchun sotuvga yo'naltirilgan kartochkalar.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📈</div>
+          <h3 data-i18n="services.c4.title">Marketing & sotuv</h3>
+          <p data-i18n="services.c4.text">Mahsulotni onlayn platformalarga joylash va sotuv strategiyasi.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">💻</div>
+          <h3 data-i18n="services.c5.title">Dasturlash</h3>
+          <p data-i18n="services.c5.text">Veb-saytlar va dasturiy yechimlar — DevOps yo'nalishida rivojlanmoqdaman.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 data-i18n="services.c6.title">Onlayn hamkorlik</h3>
+          <p data-i18n="services.c6.text">Masofadan turib ishlayman — butun O'zbekiston va chet el mijozlari uchun.</p>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="section container reveal">
-      <h3>Projects</h3>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-overlay">
-            <h4>E-Commerce Platform</h4>
-            <p>Modern storefront with cart, checkout, and analytics dashboard.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-overlay">
-            <h4>Task Management App</h4>
-            <p>Productivity app with drag-and-drop boards and team collaboration.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-overlay">
-            <h4>Travel Booking UI</h4>
-            <p>Responsive booking interface focused on smooth user journeys.</p>
-          </div>
-        </article>
+    <section id="certs" class="section container reveal">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="certs.tag">Tasdiq</span>
+        <h2 data-i18n="certs.title">Sertifikatlar</h2>
+      </div>
+      <p class="certs-hint" data-i18n="certs.hint">
+        Sertifikat rasmlarini <code>assets/certs/</code> papkasiga qo'ying — ular avtomatik ko'rinadi.
+      </p>
+      <div class="certs-grid" id="certsGrid">
+        <div class="cert-placeholder" data-i18n="certs.placeholder">Sertifikat 1 — rasm qo'shing</div>
+        <div class="cert-placeholder" data-i18n="certs.placeholder2">Sertifikat 2 — rasm qo'shing</div>
+        <div class="cert-placeholder" data-i18n="certs.placeholder3">Sertifikat 3 — rasm qo'shing</div>
+      </div>
+    </section>
+
+    <section id="faq" class="section container reveal">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="faq.tag">Savollaringiz bormi?</span>
+        <h2 data-i18n="faq.title">Tez-tez so'raladigan savollar</h2>
+        <p class="section-sub" data-i18n="faq.sub">Barcha javoblar shu yerda — alohida so'rashingiz shart emas.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <details class="faq-item" open>
+          <summary data-i18n="faq.q1">Onlayn ham ishlay olasizmi?</summary>
+          <p data-i18n="faq.a1">Ha, albatta. Masofadan turib butun O'zbekiston va chet el mijozlari bilan ishlay olaman. Telegram orqali tez bog'lanish mumkin.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q2">Kartochka yasab sotasizmi?</summary>
+          <p data-i18n="faq.a2">Ha. Uzum Market, Yandex Market va boshqa platformalar uchun professional kartochkalar yarataman — dizayn, montaj va joylashtirish bilan.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q3">Ish o'rgata olasizmi?</summary>
+          <p data-i18n="faq.a3">Agar kelisha olsak — ha. Dizayn, montaj va marketpleys bo'yicha amaliy bilimlarni o'tkazishim mumkin.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q4">Qancha tajribangiz bor?</summary>
+          <p data-i18n="faq.a4">IT va dizayn sohasida 4 yillik amaliy tajriba. Uzum Marketda 1,5 yil sotuv menejeri va montajchi sifatida ishlaganman.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q5">Qanday bog'lanish mumkin?</summary>
+          <p data-i18n="faq.a5">Telegram (@yoqubjonov_upg), telefon (+998 97 372 70 06), Instagram (@dark_nedia.1) yoki email (yoqubjonovozodbek99@gmail.com).</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q6">Qaysi tillarda gaplashasiz?</summary>
+          <p data-i18n="faq.a6">O'zbek tilida erkin (C2), ingliz tilida ish darajasida (B1) muloqot qila olaman.</p>
+        </details>
       </div>
     </section>
 
     <section id="contact" class="section container reveal">
-      <h3>Contact Me</h3>
-      <form id="contactForm" novalidate>
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required />
-          <small class="error-text"></small>
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          <small class="error-text"></small>
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Tell me about your project"
-            required
-          ></textarea>
-          <small class="error-text"></small>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p id="formStatus" class="form-status" aria-live="polite"></p>
-      </form>
+      <div class="section-head">
+        <span class="section-tag" data-i18n="contact.tag">Bog'lanish</span>
+        <h2 data-i18n="contact.title">Men bilan aloqa</h2>
+        <p class="section-sub" data-i18n="contact.sub">Eng tez javob — Telegram orqali. Barcha kanallar ochiq.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="contact-card primary-card">
+          <span class="contact-label">Telegram</span>
+          <strong>@yoqubjonov_upg</strong>
+          <span class="contact-cta" data-i18n="contact.write">Xabar yozish →</span>
+        </a>
+        <a href="tel:+998973727006" class="contact-card">
+          <span class="contact-label" data-i18n="contact.phone">Telefon</span>
+          <strong>+998 97 372 70 06</strong>
+        </a>
+        <a href="https://instagram.com/dark_nedia.1" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-label">Instagram</span>
+          <strong>@dark_nedia.1</strong>
+        </a>
+        <a href="mailto:yoqubjonovozodbek99@gmail.com" class="contact-card">
+          <span class="contact-label">Email</span>
+          <strong>yoqubjonovozodbek99@gmail.com</strong>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Alex Carter. Crafted with HTML, CSS, and JavaScript.</p>
+    <p>© 2026 Yoqubjonov Ozodbek · <span data-i18n="footer.text">Marketolog, dizayner, dasturchi</span></p>
   </footer>
+
+  <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="float-cta" aria-label="Telegram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
