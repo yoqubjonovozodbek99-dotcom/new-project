@@ -3,304 +3,249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yoqubjonov Ozodbek — marketolog, grafik dizayner va dasturchi. Uzum Market tajribasi, video/foto montaj, kartochka yaratish va onlayn marketing xizmatlari." />
-  <title>Ozodbek Yoqubjonov | Marketolog & Dizayner</title>
+  <meta name="description" content="Mobilografiya va SMM Target bo'yicha 2 oylik amaliy qo'llanma: darslar, mashqlar, ilovalar, montaj usullari va professional strategiyalar." />
+  <title>Mobilografiya va SMM Target Akademiya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
-    <nav class="nav container">
-      <a href="#home" class="logo">Ozodbek<span>.</span></a>
+    <div class="container nav">
+      <a href="#home" class="logo">MO<span>Academy</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menyu">☰</button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" data-i18n="nav.home">Bosh sahifa</a></li>
-        <li><a href="#story" data-i18n="nav.story">Hikoyam</a></li>
-        <li><a href="#skills" data-i18n="nav.skills">Ko'nikmalar</a></li>
-        <li><a href="#services" data-i18n="nav.services">Xizmatlar</a></li>
-        <li><a href="#faq" data-i18n="nav.faq">Savollar</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Aloqa</a></li>
+        <li><a href="#home">Bosh sahifa</a></li>
+        <li><a href="#roadmap">2 oylik reja</a></li>
+        <li><a href="#lessons">Darslar</a></li>
+        <li><a href="#apps">Ilovalar</a></li>
+        <li><a href="#practice">Amaliyot</a></li>
+        <li><a href="#faq">Savol-javob</a></li>
       </ul>
-      <div class="nav-actions">
-        <div class="lang-switch" role="group" aria-label="Til tanlash">
-          <button type="button" class="lang-btn active" data-lang="uz">UZ</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
-          <button type="button" class="lang-btn" data-lang="ru">RU</button>
-        </div>
-        <button id="themeToggle" class="theme-toggle" aria-label="Mavzu">
-          <span class="theme-icon">🌙</span>
-        </button>
-      </div>
-    </nav>
+    </div>
   </header>
 
   <main>
     <section id="home" class="hero container">
-      <div class="hero-content fade-up">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Salom, men</p>
-        <h1>Yoqubjonov Ozodbek</h1>
-        <p class="hero-roles" data-i18n="hero.roles">Marketolog · Grafik dizayner · Dasturchi</p>
-        <p class="hero-text" data-i18n="hero.text">
-          Uzum Market sohasida 1,5 yillik tajribaga ega — sotuv menejeri va video/foto montajchi sifatida ishlaganman.
-          Hozirda kompyuter texnologiyalari va DevOps yo'nalishida o'z bilimimni oshirib bormoqdaman.
+      <div class="hero-content reveal">
+        <p class="eyebrow">To'liq amaliy platforma</p>
+        <h1>Mobilografiya + SMM Target bo'yicha katta o'quv sayt</h1>
+        <p class="hero-text">
+          Bu sayt noldan boshlab professional darajagacha chiqish uchun qurilgan:
+          2 oyga bo'lingan o'quv yo'li, har bir hafta uchun vazifa, uyda video olish
+          usullari, montaj ilovalari, target reklama strategiyalari va mijoz bilan
+          ishlash tizimi.
         </p>
         <div class="hero-actions">
-          <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.cta1">Telegram orqali yozing</a>
-          <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">Xizmatlarim</a>
-        </div>
-        <div class="trust-bar">
-          <div class="trust-item">
-            <strong>4+</strong>
-            <span data-i18n="trust.years">Yillik tajriba</span>
-          </div>
-          <div class="trust-item">
-            <strong>1.5</strong>
-            <span data-i18n="trust.uzum">Yil Uzum Market</span>
-          </div>
-          <div class="trust-item">
-            <strong>3</strong>
-            <span data-i18n="trust.roles">Kasb yo'nalishi</span>
-          </div>
+          <a href="#roadmap" class="btn btn-primary">2 oylik rejani boshlash</a>
+          <a href="#apps" class="btn btn-outline">Ilovalarni ko'rish</a>
         </div>
       </div>
-      <div class="hero-visual fade-in">
-        <div class="profile-frame">
-          <div class="profile-photo" id="profilePhoto">
-            <span class="profile-initials">OY</span>
-            <img src="assets/photos/profile.jpg" alt="Ozodbek Yoqubjonov" onerror="this.style.display='none'" />
-          </div>
-          <div class="profile-badge" data-i18n="hero.badge">Onlayn ishlayman</div>
-        </div>
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-      </div>
-    </section>
-
-    <section id="story" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="story.tag">Kimman?</span>
-        <h2 data-i18n="story.title">Mening hikoyam</h2>
-      </div>
-      <div class="story-grid">
-        <div class="story-text">
-          <p data-i18n="story.p1">
-            Men Namangan viloyati, Toraqorg'on tumanidanman. 7-sinfdan kompyuter sohasiga qiziqib,
-            uni mukammal o'rganishga harakat qilib kelganman.
-          </p>
-          <p data-i18n="story.p2">
-            Birinchi kompyuter ishlarimni 9-sinfda boshladim — onlayn platformalarda Upwork va Instagram orqali ishladim.
-            Birinchi qilgan ishim logotip yaratish edi.
-          </p>
-          <p data-i18n="story.p3">
-            Keyin Uzum Marketda ish boshladim: foto/video montaj qilib, kartochkalar yaratdim, ularni onlayn
-            platformalarga joyladim va yaxshi daromad qildim.
-          </p>
-          <p data-i18n="story.p4">
-            Savdo menejeri bo'lish uchun ko'plab katta savdogarlarning — Uzum va Yandexda savdo qiladiganlarning —
-            yopiq konferensiyalariga bordim va amaliy tajriba oldim.
-          </p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-year">7-sinf</span>
-            <h4 data-i18n="timeline.t1.title">Kompyuterga qiziqish</h4>
-            <p data-i18n="timeline.t1.text">IT sohasiga birinchi qadam — o'rganish va tajriba olish boshlandi.</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-year">9-sinf</span>
-            <h4 data-i18n="timeline.t2.title">Birinchi onlayn ishlar</h4>
-            <p data-i18n="timeline.t2.text">Upwork va Instagram orqali logotip va dizayn buyurtmalari.</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-year">Uzum</span>
-            <h4 data-i18n="timeline.t3.title">Uzum Market tajribasi</h4>
-            <p data-i18n="timeline.t3.text">Video/foto montaj, kartochka yaratish va sotuv menejmenti — 1,5 yil.</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-year" data-i18n="timeline.t4.year">Hozir</span>
-            <h4 data-i18n="timeline.t4.title">DevOps va dasturlash</h4>
-            <p data-i18n="timeline.t4.text">Kompyuter texnologiyalari va DevOps yo'nalishida bilimni chuqurlashtirish.</p>
-          </article>
-        </div>
-      </div>
-      <div class="info-cards">
-        <article class="info-card">
-          <h4 data-i18n="info.edu.title">Ta'lim</h4>
-          <p data-i18n="info.edu.text">11 yil maktab, o'rta maxsus — 2024 yilda tamomlaganman.</p>
+      <div class="hero-cards reveal">
+        <article class="stat-card">
+          <strong data-counter="8">0</strong>
+          <span>Haftalik aniq yo'l xarita</span>
         </article>
-        <article class="info-card">
-          <h4 data-i18n="info.lang.title">Tillar</h4>
-          <p data-i18n="info.lang.text">O'zbek tili — C2 · Ingliz tili — B1</p>
+        <article class="stat-card">
+          <strong data-counter="40">0</strong>
+          <span>Amaliy topshiriq va mashqlar</span>
         </article>
-        <article class="info-card">
-          <h4 data-i18n="info.location.title">Manzil</h4>
-          <p data-i18n="info.location.text">Namangan viloyati, Toraqorg'on tumani</p>
+        <article class="stat-card">
+          <strong data-counter="20">0</strong>
+          <span>Ilova va ish qurollari</span>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="skills.tag">Nimalarni bilaman?</span>
-        <h2 data-i18n="skills.title">Ko'nikmalar</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s1">Grafik dizayn & logotip</span><span>92%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="92%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s2">Video & foto montaj</span><span>90%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s3">Marketpleys kartochkalari</span><span>95%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s4">Marketing & sotuv</span><span>88%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="88%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s5">Kompyuter & dasturlash</span><span>80%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-head"><span data-i18n="skills.s6">Onlayn platformalar</span><span>93%</span></div>
-          <div class="progress-track"><div class="progress-fill" data-width="93%"></div></div>
-        </div>
-      </div>
-      <p class="skills-note" data-i18n="skills.note">
-        Kompyuterni chuqurroq o'rganaman. Video va foto dizaynda nimalarga e'tibor berish kerakligini bilaman —
-        4 yillik amaliy tajribaga egaman.
-      </p>
-    </section>
-
-    <section id="services" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="services.tag">Nima qilaman?</span>
-        <h2 data-i18n="services.title">Xizmatlar</h2>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3 data-i18n="services.c1.title">Grafik dizayn</h3>
-          <p data-i18n="services.c1.text">Logotip, brending, ijtimoiy tarmoq uchun vizual kontent yaratish.</p>
+    <section id="intro" class="section container reveal">
+      <h2>Mobilografiya va SMM Target nima?</h2>
+      <div class="two-col">
+        <article class="panel">
+          <h3>Mobilografiya</h3>
+          <p>
+            Telefon orqali professional video kontent yaratish san'ati. Bu faqat
+            montaj emas: kadr, yorug'lik, audio, ssenariy, storytelling, ritm va
+            platformaga mos formatni o'z ichiga oladi.
+          </p>
         </article>
-        <article class="service-card">
-          <div class="service-icon">🎬</div>
-          <h3 data-i18n="services.c2.title">Video & foto montaj</h3>
-          <p data-i18n="services.c2.text">Mahsulot uchun professional video va foto tahrirlash, reklama materiallari.</p>
-        </article>
-        <article class="service-card featured">
-          <div class="service-icon">📦</div>
-          <h3 data-i18n="services.c3.title">Marketpleys kartochkalari</h3>
-          <p data-i18n="services.c3.text">Uzum, Yandex va boshqa platformalar uchun sotuvga yo'naltirilgan kartochkalar.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">📈</div>
-          <h3 data-i18n="services.c4.title">Marketing & sotuv</h3>
-          <p data-i18n="services.c4.text">Mahsulotni onlayn platformalarga joylash va sotuv strategiyasi.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">💻</div>
-          <h3 data-i18n="services.c5.title">Dasturlash</h3>
-          <p data-i18n="services.c5.text">Veb-saytlar va dasturiy yechimlar — DevOps yo'nalishida rivojlanmoqdaman.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">🌐</div>
-          <h3 data-i18n="services.c6.title">Onlayn hamkorlik</h3>
-          <p data-i18n="services.c6.text">Masofadan turib ishlayman — butun O'zbekiston va chet el mijozlari uchun.</p>
+        <article class="panel">
+          <h3>SMM + Target</h3>
+          <p>
+            Kontentni to'g'ri auditoriyaga yetkazish tizimi. Target reklama orqali
+            sotuv, lid va mijoz oqimini oshirish mumkin. Bu bo'limda Meta va boshqa
+            platformalar uchun kampaniya tuzish qoidalari beriladi.
+          </p>
         </article>
       </div>
     </section>
 
-    <section id="certs" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="certs.tag">Tasdiq</span>
-        <h2 data-i18n="certs.title">Sertifikatlar</h2>
+    <section id="roadmap" class="section container reveal">
+      <h2>2 oylik o'quv reja (8 hafta)</h2>
+      <p class="section-sub">Har bir haftada: nazariya + amaliy mashq + natija tekshiruvi.</p>
+      <div class="roadmap-grid">
+        <article class="week-card"><h3>1-hafta</h3><p>Asosiy tushunchalar, telefon sozlamalari, kadr kompozitsiyasi.</p></article>
+        <article class="week-card"><h3>2-hafta</h3><p>Yorug'lik, audio, uy sharoitida mini-studiya tayyorlash.</p></article>
+        <article class="week-card"><h3>3-hafta</h3><p>Storytelling, short-video ssenariy yozish va hook yaratish.</p></article>
+        <article class="week-card"><h3>4-hafta</h3><p>CapCut va VN'da montaj: cut, transition, subtitle, color.</p></article>
+        <article class="week-card"><h3>5-hafta</h3><p>Kontent-plan, kontent ustunlari, posting grafigi va KPI.</p></article>
+        <article class="week-card"><h3>6-hafta</h3><p>Target asoslari: auditoriya, offer, kreatif va test kampaniya.</p></article>
+        <article class="week-card"><h3>7-hafta</h3><p>Analitika: CTR, CPM, CPL, ROAS, xatolarni tahlil qilish.</p></article>
+        <article class="week-card"><h3>8-hafta</h3><p>Portfolio yig'ish, narx qo'yish, mijoz bilan ishlash va freelancing.</p></article>
       </div>
-      <p class="certs-hint" data-i18n="certs.hint">
-        Sertifikat rasmlarini <code>assets/certs/</code> papkasiga qo'ying — ular avtomatik ko'rinadi.
-      </p>
-      <div class="certs-grid" id="certsGrid">
-        <div class="cert-placeholder" data-i18n="certs.placeholder">Sertifikat 1 — rasm qo'shing</div>
-        <div class="cert-placeholder" data-i18n="certs.placeholder2">Sertifikat 2 — rasm qo'shing</div>
-        <div class="cert-placeholder" data-i18n="certs.placeholder3">Sertifikat 3 — rasm qo'shing</div>
+    </section>
+
+    <section id="lessons" class="section container reveal">
+      <h2>To'liq darslar va qoidalar</h2>
+      <div class="accordion">
+        <details open>
+          <summary>1-modul: Mobilografiya fundamenti</summary>
+          <ul>
+            <li>Telefon kamera sozlamalari: 1080p/4K, FPS, stabilizatsiya.</li>
+            <li>Kompozitsiya: Rule of Thirds, leading lines, negative space.</li>
+            <li>Kadr turlari: wide, medium, close-up, detail shot.</li>
+            <li>Asosiy qoida: har bir videoda bitta aniq maqsad bo'lsin.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>2-modul: Uyda video olish (oson va kuchli)</summary>
+          <ul>
+            <li>Deraza yorug'ligidan foydalaning, yuzni derazaga 45 daraja qiling.</li>
+            <li>Telefonni kitoblar ustiga qo'yib stabil kadr oling.</li>
+            <li>Tovush uchun quloqchin mikrofoni yoki alohida audio yozuv.</li>
+            <li>Fonni tozalang: 3 ta asosiy predmetdan ortiq bo'lmasin.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>3-modul: Montajni professional qilish</summary>
+          <ul>
+            <li>Har 1-2 soniyada dinamik cut qo'shing.</li>
+            <li>Subtitle qo'shing: videoning 70% odamlar ovozsiz ko'radi.</li>
+            <li>Color correction: oq rangni oq qiling, kontrastni me'yorda ushlang.</li>
+            <li>Sound design: harakatlarga mos kichik efektlar qo'shing.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>4-modul: SMM strategiya</summary>
+          <ul>
+            <li>Kontentni 4 ustunga bo'ling: ta'limiy, ishonch, sotuv, backstage.</li>
+            <li>7 kunlik kontent-plan oldindan yozilsin.</li>
+            <li>Har postda CTA bo'lsin: yozing, saqlang, ulashing, sotib oling.</li>
+            <li>Natijani haftasiga 1 marta raqamlar bilan o'lchang.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>5-modul: Target reklama noldan</summary>
+          <ul>
+            <li>Offer: bir jumlada aniq natija + muddat + bonus.</li>
+            <li>Audience: sovuq, iliq, issiq segmentlarga ajrating.</li>
+            <li>Creative test: bir kampaniyada kamida 3 video kreatif.</li>
+            <li>Budget: kichikdan boshlang, natija berganini skalalang.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section id="apps" class="section container reveal">
+      <h2>Montaj va ish uchun ilovalar</h2>
+      <div class="apps-grid">
+        <article class="app-card">
+          <h3>CapCut</h3>
+          <ol>
+            <li>New Project oching, videolarni import qiling.</li>
+            <li>Cut qiling, keraksiz joylarni olib tashlang.</li>
+            <li>Auto captions yoqing va xatolarni to'g'rilang.</li>
+            <li>1080p export, 30fps yoki 60fps tanlang.</li>
+          </ol>
+        </article>
+        <article class="app-card">
+          <h3>VN Video Editor</h3>
+          <ol>
+            <li>Timeline'ga kliplarni to'g'ri ketma-ket joylang.</li>
+            <li>Speed ramp va smooth transition qo'shing.</li>
+            <li>LUT yoki filter bilan color grading qiling.</li>
+            <li>Audio ducking orqali ovoz balansini ushlang.</li>
+          </ol>
+        </article>
+        <article class="app-card">
+          <h3>Canva</h3>
+          <ol>
+            <li>Reels/Story shablonidan boshlang.</li>
+            <li>Brend rang va shriftni oldindan saqlab qo'ying.</li>
+            <li>Thumbnail va post dizaynini bir uslubda qiling.</li>
+            <li>PNG/JPG export qilib kontentga qo'shing.</li>
+          </ol>
+        </article>
+        <article class="app-card">
+          <h3>Meta Ads Manager</h3>
+          <ol>
+            <li>Kampaniya maqsadini tanlang (lead/sales/messages).</li>
+            <li>Audience, geolokatsiya va qiziqishni belgilang.</li>
+            <li>Video kreatif yuklab, CTA tugmasini qo'ying.</li>
+            <li>3-5 kun test qiling, keyin natijani tahlil qiling.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section id="practice" class="section container reveal">
+      <h2>Har kuni bajariladigan mashqlar</h2>
+      <div class="practice-grid">
+        <article class="practice-card">
+          <h3>15 daqiqa kuzatuv</h3>
+          <p>Top 5 mobilograf reels ko'ring va hook, tempo, subtitle uslubini yozib boring.</p>
+        </article>
+        <article class="practice-card">
+          <h3>20 daqiqa suratga olish</h3>
+          <p>Har kuni kamida 5 xil kadr oling: wide, close-up, detail, movement, POV.</p>
+        </article>
+        <article class="practice-card">
+          <h3>25 daqiqa montaj</h3>
+          <p>Oldingi videolardan 20-30 soniyalik bitta tayyor reels chiqaring.</p>
+        </article>
+        <article class="practice-card">
+          <h3>10 daqiqa tahlil</h3>
+          <p>Video kuchli va sust joylarini yozing: bir keyingi kontentda to'g'rilang.</p>
+        </article>
+      </div>
+      <div class="checklist">
+        <h3>Ishga chiqishdan oldin checklist</h3>
+        <label><input type="checkbox" /> Kadr yorug'ligi to'g'ri</label>
+        <label><input type="checkbox" /> Ovoz tushunarli va shovqinsiz</label>
+        <label><input type="checkbox" /> Subtitle qo'shilgan</label>
+        <label><input type="checkbox" /> 3 soniyada hook bor</label>
+        <label><input type="checkbox" /> CTA bilan tugagan</label>
       </div>
     </section>
 
     <section id="faq" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="faq.tag">Savollaringiz bormi?</span>
-        <h2 data-i18n="faq.title">Tez-tez so'raladigan savollar</h2>
-        <p class="section-sub" data-i18n="faq.sub">Barcha javoblar shu yerda — alohida so'rashingiz shart emas.</p>
-      </div>
-      <div class="faq-list" id="faqList">
-        <details class="faq-item" open>
-          <summary data-i18n="faq.q1">Onlayn ham ishlay olasizmi?</summary>
-          <p data-i18n="faq.a1">Ha, albatta. Masofadan turib butun O'zbekiston va chet el mijozlari bilan ishlay olaman. Telegram orqali tez bog'lanish mumkin.</p>
+      <h2>Ko'p beriladigan savollar</h2>
+      <div class="accordion">
+        <details open>
+          <summary>Uyda professional video olish mumkinmi?</summary>
+          <p>Ha. To'g'ri yorug'lik, toza fon, stabil kadr va yaxshi audio bilan uy sharoitida ham kuchli natija olinadi.</p>
         </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.q2">Kartochka yasab sotasizmi?</summary>
-          <p data-i18n="faq.a2">Ha. Uzum Market, Yandex Market va boshqa platformalar uchun professional kartochkalar yarataman — dizayn, montaj va joylashtirish bilan.</p>
+        <details>
+          <summary>Qaysi ilovadan boshlash oson?</summary>
+          <p>Eng osoni CapCut. Interfeysi sodda, subtitle va effektlari ko'p, telefon uchun qulay.</p>
         </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.q3">Ish o'rgata olasizmi?</summary>
-          <p data-i18n="faq.a3">Agar kelisha olsak — ha. Dizayn, montaj va marketpleys bo'yicha amaliy bilimlarni o'tkazishim mumkin.</p>
+        <details>
+          <summary>2 oyda natija ko'rish mumkinmi?</summary>
+          <p>Kunlik intizom bilan albatta. 8 haftalik rejadagi vazifalarni o'tkazmay bajarsangiz portfolio chiqadi.</p>
         </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.q4">Qancha tajribangiz bor?</summary>
-          <p data-i18n="faq.a4">IT va dizayn sohasida 4 yillik amaliy tajriba. Uzum Marketda 1,5 yil sotuv menejeri va montajchi sifatida ishlaganman.</p>
+        <details>
+          <summary>Target reklama uchun minimal byudjet qancha?</summary>
+          <p>Kichik test bilan boshlang: bir necha kreativga bo'lingan kichik byudjet va tez tahlil eng to'g'ri usul.</p>
         </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.q5">Qanday bog'lanish mumkin?</summary>
-          <p data-i18n="faq.a5">Telegram (@yoqubjonov_upg), telefon (+998 97 372 70 06), Instagram (@dark_nedia.1) yoki email (yoqubjonovozodbek99@gmail.com).</p>
-        </details>
-        <details class="faq-item">
-          <summary data-i18n="faq.q6">Qaysi tillarda gaplashasiz?</summary>
-          <p data-i18n="faq.a6">O'zbek tilida erkin (C2), ingliz tilida ish darajasida (B1) muloqot qila olaman.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contact" class="section container reveal">
-      <div class="section-head">
-        <span class="section-tag" data-i18n="contact.tag">Bog'lanish</span>
-        <h2 data-i18n="contact.title">Men bilan aloqa</h2>
-        <p class="section-sub" data-i18n="contact.sub">Eng tez javob — Telegram orqali. Barcha kanallar ochiq.</p>
-      </div>
-      <div class="contact-grid">
-        <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="contact-card primary-card">
-          <span class="contact-label">Telegram</span>
-          <strong>@yoqubjonov_upg</strong>
-          <span class="contact-cta" data-i18n="contact.write">Xabar yozish →</span>
-        </a>
-        <a href="tel:+998973727006" class="contact-card">
-          <span class="contact-label" data-i18n="contact.phone">Telefon</span>
-          <strong>+998 97 372 70 06</strong>
-        </a>
-        <a href="https://instagram.com/dark_nedia.1" target="_blank" rel="noopener" class="contact-card">
-          <span class="contact-label">Instagram</span>
-          <strong>@dark_nedia.1</strong>
-        </a>
-        <a href="mailto:yoqubjonovozodbek99@gmail.com" class="contact-card">
-          <span class="contact-label">Email</span>
-          <strong>yoqubjonovozodbek99@gmail.com</strong>
-        </a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Yoqubjonov Ozodbek · <span data-i18n="footer.text">Marketolog, dizayner, dasturchi</span></p>
+    <div class="container">
+      <p>© 2026 Mobilografiya va SMM Target Akademiya. Barcha darslar o'zbek tilida.</p>
+    </div>
   </footer>
-
-  <a href="https://t.me/yoqubjonov_upg" target="_blank" rel="noopener" class="float-cta" aria-label="Telegram">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-  </a>
 
   <script src="script.js"></script>
 </body>
