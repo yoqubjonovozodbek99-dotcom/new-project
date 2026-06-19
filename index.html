@@ -3,250 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mobilografiya va SMM Target bo'yicha 2 oylik amaliy qo'llanma: darslar, mashqlar, ilovalar, montaj usullari va professional strategiyalar." />
-  <title>Mobilografiya va SMM Target Akademiya</title>
+  <meta name="description" content="Mobilografiya va SMM Target bo'yicha to'liq 2 oylik akademiya: 56 kunlik dars, ilovalar, mashqlar, target strategiya va professional qo'llanma." />
+  <title>Mobilografiya va SMM Target — To'liq Akademiya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="progress-bar" id="progressBar"></div>
+
   <header class="header">
-    <div class="container nav">
+    <div class="container header-inner">
       <a href="#home" class="logo">MO<span>Academy</span></a>
+      <div class="search-wrap">
+        <input type="search" id="searchInput" placeholder="Dars, ilova yoki mavzuni qidiring..." aria-label="Qidiruv" />
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Menyu">☰</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Bosh sahifa</a></li>
-        <li><a href="#roadmap">2 oylik reja</a></li>
-        <li><a href="#lessons">Darslar</a></li>
-        <li><a href="#apps">Ilovalar</a></li>
-        <li><a href="#practice">Amaliyot</a></li>
-        <li><a href="#faq">Savol-javob</a></li>
-      </ul>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero container">
-      <div class="hero-content reveal">
-        <p class="eyebrow">To'liq amaliy platforma</p>
-        <h1>Mobilografiya + SMM Target bo'yicha katta o'quv sayt</h1>
-        <p class="hero-text">
-          Bu sayt noldan boshlab professional darajagacha chiqish uchun qurilgan:
-          2 oyga bo'lingan o'quv yo'li, har bir hafta uchun vazifa, uyda video olish
-          usullari, montaj ilovalari, target reklama strategiyalari va mijoz bilan
-          ishlash tizimi.
+  <div class="layout container">
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav" id="sidebarNav" aria-label="Bo'limlar"></nav>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <section id="home" class="hero reveal">
+        <p class="eyebrow">To'liq professional akademiya</p>
+        <h1>Mobilografiya + SMM Target bo'yicha maksimal to'liq qo'llanma</h1>
+        <p class="lead">
+          Bu sayt bitta joyda barcha savollaringizga javob beradi: noldan professional darajagacha
+          2 oylik yo'l xarita, har kungi vazifalar, uy studiyasi, montaj, kontent strategiyasi,
+          target reklama, analitika, mijoz bilan ishlash va daromad olish tizimi.
         </p>
+        <div class="hero-stats" id="heroStats"></div>
         <div class="hero-actions">
-          <a href="#roadmap" class="btn btn-primary">2 oylik rejani boshlash</a>
-          <a href="#apps" class="btn btn-outline">Ilovalarni ko'rish</a>
+          <a href="#week-1" class="btn btn-primary">1-haftadan boshlash</a>
+          <a href="#glossary" class="btn btn-outline">Terminlar lug'ati</a>
         </div>
-      </div>
-      <div class="hero-cards reveal">
-        <article class="stat-card">
-          <strong data-counter="8">0</strong>
-          <span>Haftalik aniq yo'l xarita</span>
-        </article>
-        <article class="stat-card">
-          <strong data-counter="40">0</strong>
-          <span>Amaliy topshiriq va mashqlar</span>
-        </article>
-        <article class="stat-card">
-          <strong data-counter="20">0</strong>
-          <span>Ilova va ish qurollari</span>
-        </article>
-      </div>
-    </section>
+      </section>
 
-    <section id="intro" class="section container reveal">
-      <h2>Mobilografiya va SMM Target nima?</h2>
-      <div class="two-col">
-        <article class="panel">
-          <h3>Mobilografiya</h3>
-          <p>
-            Telefon orqali professional video kontent yaratish san'ati. Bu faqat
-            montaj emas: kadr, yorug'lik, audio, ssenariy, storytelling, ritm va
-            platformaga mos formatni o'z ichiga oladi.
-          </p>
-        </article>
-        <article class="panel">
-          <h3>SMM + Target</h3>
-          <p>
-            Kontentni to'g'ri auditoriyaga yetkazish tizimi. Target reklama orqali
-            sotuv, lid va mijoz oqimini oshirish mumkin. Bu bo'limda Meta va boshqa
-            platformalar uchun kampaniya tuzish qoidalari beriladi.
-          </p>
-        </article>
-      </div>
-    </section>
+      <div id="dynamicSections"></div>
+    </main>
+  </div>
 
-    <section id="roadmap" class="section container reveal">
-      <h2>2 oylik o'quv reja (8 hafta)</h2>
-      <p class="section-sub">Har bir haftada: nazariya + amaliy mashq + natija tekshiruvi.</p>
-      <div class="roadmap-grid">
-        <article class="week-card"><h3>1-hafta</h3><p>Asosiy tushunchalar, telefon sozlamalari, kadr kompozitsiyasi.</p></article>
-        <article class="week-card"><h3>2-hafta</h3><p>Yorug'lik, audio, uy sharoitida mini-studiya tayyorlash.</p></article>
-        <article class="week-card"><h3>3-hafta</h3><p>Storytelling, short-video ssenariy yozish va hook yaratish.</p></article>
-        <article class="week-card"><h3>4-hafta</h3><p>CapCut va VN'da montaj: cut, transition, subtitle, color.</p></article>
-        <article class="week-card"><h3>5-hafta</h3><p>Kontent-plan, kontent ustunlari, posting grafigi va KPI.</p></article>
-        <article class="week-card"><h3>6-hafta</h3><p>Target asoslari: auditoriya, offer, kreatif va test kampaniya.</p></article>
-        <article class="week-card"><h3>7-hafta</h3><p>Analitika: CTR, CPM, CPL, ROAS, xatolarni tahlil qilish.</p></article>
-        <article class="week-card"><h3>8-hafta</h3><p>Portfolio yig'ish, narx qo'yish, mijoz bilan ishlash va freelancing.</p></article>
-      </div>
-    </section>
-
-    <section id="lessons" class="section container reveal">
-      <h2>To'liq darslar va qoidalar</h2>
-      <div class="accordion">
-        <details open>
-          <summary>1-modul: Mobilografiya fundamenti</summary>
-          <ul>
-            <li>Telefon kamera sozlamalari: 1080p/4K, FPS, stabilizatsiya.</li>
-            <li>Kompozitsiya: Rule of Thirds, leading lines, negative space.</li>
-            <li>Kadr turlari: wide, medium, close-up, detail shot.</li>
-            <li>Asosiy qoida: har bir videoda bitta aniq maqsad bo'lsin.</li>
-          </ul>
-        </details>
-        <details>
-          <summary>2-modul: Uyda video olish (oson va kuchli)</summary>
-          <ul>
-            <li>Deraza yorug'ligidan foydalaning, yuzni derazaga 45 daraja qiling.</li>
-            <li>Telefonni kitoblar ustiga qo'yib stabil kadr oling.</li>
-            <li>Tovush uchun quloqchin mikrofoni yoki alohida audio yozuv.</li>
-            <li>Fonni tozalang: 3 ta asosiy predmetdan ortiq bo'lmasin.</li>
-          </ul>
-        </details>
-        <details>
-          <summary>3-modul: Montajni professional qilish</summary>
-          <ul>
-            <li>Har 1-2 soniyada dinamik cut qo'shing.</li>
-            <li>Subtitle qo'shing: videoning 70% odamlar ovozsiz ko'radi.</li>
-            <li>Color correction: oq rangni oq qiling, kontrastni me'yorda ushlang.</li>
-            <li>Sound design: harakatlarga mos kichik efektlar qo'shing.</li>
-          </ul>
-        </details>
-        <details>
-          <summary>4-modul: SMM strategiya</summary>
-          <ul>
-            <li>Kontentni 4 ustunga bo'ling: ta'limiy, ishonch, sotuv, backstage.</li>
-            <li>7 kunlik kontent-plan oldindan yozilsin.</li>
-            <li>Har postda CTA bo'lsin: yozing, saqlang, ulashing, sotib oling.</li>
-            <li>Natijani haftasiga 1 marta raqamlar bilan o'lchang.</li>
-          </ul>
-        </details>
-        <details>
-          <summary>5-modul: Target reklama noldan</summary>
-          <ul>
-            <li>Offer: bir jumlada aniq natija + muddat + bonus.</li>
-            <li>Audience: sovuq, iliq, issiq segmentlarga ajrating.</li>
-            <li>Creative test: bir kampaniyada kamida 3 video kreatif.</li>
-            <li>Budget: kichikdan boshlang, natija berganini skalalang.</li>
-          </ul>
-        </details>
-      </div>
-    </section>
-
-    <section id="apps" class="section container reveal">
-      <h2>Montaj va ish uchun ilovalar</h2>
-      <div class="apps-grid">
-        <article class="app-card">
-          <h3>CapCut</h3>
-          <ol>
-            <li>New Project oching, videolarni import qiling.</li>
-            <li>Cut qiling, keraksiz joylarni olib tashlang.</li>
-            <li>Auto captions yoqing va xatolarni to'g'rilang.</li>
-            <li>1080p export, 30fps yoki 60fps tanlang.</li>
-          </ol>
-        </article>
-        <article class="app-card">
-          <h3>VN Video Editor</h3>
-          <ol>
-            <li>Timeline'ga kliplarni to'g'ri ketma-ket joylang.</li>
-            <li>Speed ramp va smooth transition qo'shing.</li>
-            <li>LUT yoki filter bilan color grading qiling.</li>
-            <li>Audio ducking orqali ovoz balansini ushlang.</li>
-          </ol>
-        </article>
-        <article class="app-card">
-          <h3>Canva</h3>
-          <ol>
-            <li>Reels/Story shablonidan boshlang.</li>
-            <li>Brend rang va shriftni oldindan saqlab qo'ying.</li>
-            <li>Thumbnail va post dizaynini bir uslubda qiling.</li>
-            <li>PNG/JPG export qilib kontentga qo'shing.</li>
-          </ol>
-        </article>
-        <article class="app-card">
-          <h3>Meta Ads Manager</h3>
-          <ol>
-            <li>Kampaniya maqsadini tanlang (lead/sales/messages).</li>
-            <li>Audience, geolokatsiya va qiziqishni belgilang.</li>
-            <li>Video kreatif yuklab, CTA tugmasini qo'ying.</li>
-            <li>3-5 kun test qiling, keyin natijani tahlil qiling.</li>
-          </ol>
-        </article>
-      </div>
-    </section>
-
-    <section id="practice" class="section container reveal">
-      <h2>Har kuni bajariladigan mashqlar</h2>
-      <div class="practice-grid">
-        <article class="practice-card">
-          <h3>15 daqiqa kuzatuv</h3>
-          <p>Top 5 mobilograf reels ko'ring va hook, tempo, subtitle uslubini yozib boring.</p>
-        </article>
-        <article class="practice-card">
-          <h3>20 daqiqa suratga olish</h3>
-          <p>Har kuni kamida 5 xil kadr oling: wide, close-up, detail, movement, POV.</p>
-        </article>
-        <article class="practice-card">
-          <h3>25 daqiqa montaj</h3>
-          <p>Oldingi videolardan 20-30 soniyalik bitta tayyor reels chiqaring.</p>
-        </article>
-        <article class="practice-card">
-          <h3>10 daqiqa tahlil</h3>
-          <p>Video kuchli va sust joylarini yozing: bir keyingi kontentda to'g'rilang.</p>
-        </article>
-      </div>
-      <div class="checklist">
-        <h3>Ishga chiqishdan oldin checklist</h3>
-        <label><input type="checkbox" /> Kadr yorug'ligi to'g'ri</label>
-        <label><input type="checkbox" /> Ovoz tushunarli va shovqinsiz</label>
-        <label><input type="checkbox" /> Subtitle qo'shilgan</label>
-        <label><input type="checkbox" /> 3 soniyada hook bor</label>
-        <label><input type="checkbox" /> CTA bilan tugagan</label>
-      </div>
-    </section>
-
-    <section id="faq" class="section container reveal">
-      <h2>Ko'p beriladigan savollar</h2>
-      <div class="accordion">
-        <details open>
-          <summary>Uyda professional video olish mumkinmi?</summary>
-          <p>Ha. To'g'ri yorug'lik, toza fon, stabil kadr va yaxshi audio bilan uy sharoitida ham kuchli natija olinadi.</p>
-        </details>
-        <details>
-          <summary>Qaysi ilovadan boshlash oson?</summary>
-          <p>Eng osoni CapCut. Interfeysi sodda, subtitle va effektlari ko'p, telefon uchun qulay.</p>
-        </details>
-        <details>
-          <summary>2 oyda natija ko'rish mumkinmi?</summary>
-          <p>Kunlik intizom bilan albatta. 8 haftalik rejadagi vazifalarni o'tkazmay bajarsangiz portfolio chiqadi.</p>
-        </details>
-        <details>
-          <summary>Target reklama uchun minimal byudjet qancha?</summary>
-          <p>Kichik test bilan boshlang: bir necha kreativga bo'lingan kichik byudjet va tez tahlil eng to'g'ri usul.</p>
-        </details>
-      </div>
-    </section>
-  </main>
+  <button class="back-top" id="backTop" aria-label="Yuqoriga">↑</button>
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Mobilografiya va SMM Target Akademiya. Barcha darslar o'zbek tilida.</p>
+      <p>© 2026 Mobilografiya va SMM Target Akademiya — barcha materiallar o'zbek tilida.</p>
+      <p class="footer-note">Sayt oxirigacha o'qilsa, asosiy savollarga alohida javob qidirish shart emas.</p>
     </div>
   </footer>
 
+  <script src="content.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
