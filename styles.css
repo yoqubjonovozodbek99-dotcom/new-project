@@ -639,4 +639,228 @@ body {
 @media (max-width: 600px) {
   .hero-stats { grid-template-columns: 1fr; }
   .search-wrap { max-width: none; }
+  .user-bar { display: none; }
+}
+
+/* ── Auth / Login ── */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-wrap { width: min(420px, 100%); }
+
+.auth-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.auth-logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.auth-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-sub {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.auth-form input {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+}
+
+.auth-form input:focus {
+  outline: 2px solid var(--brand);
+  border-color: transparent;
+}
+
+.auth-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-submit:disabled { opacity: 0.6; cursor: wait; }
+
+.auth-notice,
+.auth-alert {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.auth-notice {
+  background: rgba(124, 108, 255, 0.12);
+  border: 1px solid rgba(124, 108, 255, 0.3);
+  color: var(--text);
+}
+
+.auth-notice a {
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.auth-alert {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--warn);
+}
+
+.auth-features {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.auth-features li { margin-bottom: 0.35rem; }
+
+/* User bar */
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-size: 0.82rem;
+  color: var(--muted);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.user-link:hover { text-decoration: underline; }
+
+.user-logout {
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.user-logout:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Admin panel */
+.admin-page {
+  padding: 2rem 0 4rem;
+}
+
+.admin-section {
+  margin-bottom: 2.5rem;
+}
+
+.admin-section h3 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-warn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--warn);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.admin-list { display: grid; gap: 0.75rem; }
+
+.admin-alert {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--warn);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem;
+}
+
+.admin-alert.read {
+  opacity: 0.65;
+  border-left-color: var(--line);
+}
+
+.admin-alert small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.btn-sm {
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.table-wrap { overflow-x: auto; }
+
+.ua-cell {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muted { color: var(--muted); }
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  background: var(--bg-soft);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
 }

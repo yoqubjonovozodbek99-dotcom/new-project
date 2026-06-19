@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Xavfsizlik paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MO<span>Academy</span> Admin</a>
+      <div class="user-bar" id="adminBar">
+        <a href="index.html" class="user-link">Akademiya</a>
+        <button type="button" class="user-logout" id="logoutBtn">Chiqish</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-page">
+    <div class="section-header">
+      <h2>Xavfsizlik paneli</h2>
+      <p>Kim, qayerdan va qachon kirganini kuzating. Shubhali faoliyat ogohlantirishlari shu yerda.</p>
+    </div>
+
+    <section class="admin-section">
+      <h3>Shubhali faoliyat <span class="badge-warn" id="alertCount">0</span></h3>
+      <div id="alertsList" class="admin-list"></div>
+    </section>
+
+    <section class="admin-section">
+      <h3>Kirish jurnali (oxirgi 100)</h3>
+      <div class="table-wrap">
+        <table class="data-table" id="logsTable">
+          <thead>
+            <tr>
+              <th>Vaqt</th>
+              <th>Foydalanuvchi</th>
+              <th>IP manzil</th>
+              <th>Qurilma</th>
+            </tr>
+          </thead>
+          <tbody id="logsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    (async function () {
+      const user = await AcademyAuth.requireAuth("admin");
+      if (!user) return;
+
+      document.getElementById("logoutBtn").addEventListener("click", () => AcademyAuth.logout());
+
+      const client = AcademyAuth.getClient();
+
+      async function loadAlerts() {
+        const { data, error } = await client
+          .from("security_alerts")
+          .select("id, message, ip_count, created_at, is_read, user_id")
+          .order("created_at", { ascending: false })
+          .limit(50);
+
+        if (error) {
+          document.getElementById("alertsList").innerHTML =
+            `<p class="auth-alert">Xatolik: ${error.message}</p>`;
+          return;
+        }
+
+        const unread = (data || []).filter((a) => !a.is_read).length;
+        document.getElementById("alertCount").textContent = unread;
+
+        if (!data?.length) {
+          document.getElementById("alertsList").innerHTML =
+            '<p class="muted">Hozircha ogohlantirish yo\'q.</p>';
+          return;
+        }
+
+        document.getElementById("alertsList").innerHTML = data
+          .map(
+            (a) => `<article class="admin-alert ${a.is_read ? "read" : ""}" data-id="${a.id}">
+              <p>${esc(a.message)}</p>
+              <small>${fmt(a.created_at)} · ${a.ip_count || "?"} IP</small>
+              ${!a.is_read ? `<button type="button" class="btn btn-outline btn-sm mark-read">O'qildi</button>` : ""}
+            </article>`
+          )
+          .join("");
+
+        document.querySelectorAll(".mark-read").forEach((btn) => {
+          btn.addEventListener("click", async (e) => {
+            const id = e.target.closest(".admin-alert").dataset.id;
+            await client.from("security_alerts").update({ is_read: true }).eq("id", id);
+            loadAlerts();
+          });
+        });
+      }
+
+      async function loadLogs() {
+        const { data: logs, error } = await client
+          .from("login_logs")
+          .select("id, ip_address, user_agent, created_at, user_id")
+          .order("created_at", { ascending: false })
+          .limit(100);
+
+        if (error) {
+          document.getElementById("logsBody").innerHTML =
+            `<tr><td colspan="4">Xatolik: ${error.message}</td></tr>`;
+          return;
+        }
+
+        const userIds = [...new Set((logs || []).map((l) => l.user_id))];
+        const { data: profiles } = await client
+          .from("profiles")
+          .select("id, full_name")
+          .in("id", userIds);
+
+        const names = Object.fromEntries((profiles || []).map((p) => [p.id, p.full_name]));
+
+        document.getElementById("logsBody").innerHTML = (logs || [])
+          .map(
+            (l) => `<tr>
+              <td>${fmt(l.created_at)}</td>
+              <td>${esc(names[l.user_id] || l.user_id.slice(0, 8))}</td>
+              <td><code>${esc(l.ip_address || "—")}</code></td>
+              <td class="ua-cell">${esc(shortUa(l.user_agent))}</td>
+            </tr>`
+          )
+          .join("");
+      }
+
+      function fmt(iso) {
+        return new Date(iso).toLocaleString("uz-UZ");
+      }
+
+      function esc(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function shortUa(ua) {
+        if (!ua) return "—";
+        if (ua.includes("Mobile")) return "Mobil";
+        if (ua.includes("Windows")) return "Windows";
+        if (ua.includes("Mac")) return "Mac";
+        return ua.slice(0, 40);
+      }
+
+      await loadAlerts();
+      await loadLogs();
+      setInterval(loadAlerts, 60000);
+    })();
+  </script>
+</body>
+</html>

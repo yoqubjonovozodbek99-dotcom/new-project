@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirish — MO Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <a href="index.html" class="logo auth-logo">MO<span>Academy</span></a>
+      <h1>Kirish</h1>
+      <p class="auth-sub">Saytga kirish uchun sizga berilgan login va parolni kiriting.</p>
+      <div class="auth-notice" id="siteNotice" hidden>
+        <strong>Faqat rasmiy sayt orqali kiring.</strong>
+        <p>Bu nusxa ishlamaydi. Quyidagi havolani oching:</p>
+        <p><a id="officialLink" href="#" target="_blank" rel="noopener"></a></p>
+      </div>
+
+      <div class="auth-notice" id="setupNotice" hidden>
+        <strong>Supabase sozlanmagan.</strong>
+        <p><code>auth-config.js</code> faylida URL va Anon Key ni kiriting. Batafsil: <code>XAVFSIZLIK.md</code></p>
+      </div>
+
+      <div class="auth-alert" id="authAlert" hidden></div>
+
+      <form id="loginForm" class="auth-form">
+        <label>
+          Login
+          <input type="text" id="email" name="email" required autocomplete="username" placeholder="Sizga berilgan login" />
+        </label>
+        <label>
+          Parol
+          <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Sizga berilgan parol" />
+        </label>        <button type="submit" class="btn btn-primary auth-submit" id="submitBtn">Kirish</button>
+      </form>
+
+      <ul class="auth-features">
+        <li>Faqat admin bergan login va parol ishlaydi</li>
+        <li>Parolni boshqalarga bermang</li>
+        <li>Bir vaqtda faqat 1 qurilma</li>
+      </ul>    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const alertEl = document.getElementById("authAlert");
+      const setupEl = document.getElementById("setupNotice");
+      const siteEl = document.getElementById("siteNotice");
+      const form = document.getElementById("loginForm");
+
+      const official = AcademyAuth.getOfficialSiteUrl();
+      const linkEl = document.getElementById("officialLink");
+      if (linkEl) {
+        linkEl.href = official + "login.html";
+        linkEl.textContent = official + "login.html";
+      }
+
+      if (AcademyAuth.isConfigured() && !AcademyAuth.isAllowedSite()) {
+        siteEl.hidden = false;
+        form.hidden = true;
+      }
+
+      if (params.get("setup") === "1" || !AcademyAuth.isConfigured()) {
+        setupEl.hidden = false;
+        if (!AcademyAuth.isConfigured()) form.hidden = true;
+      }
+
+      if (params.get("msg")) {
+        alertEl.textContent = decodeURIComponent(params.get("msg"));
+        alertEl.hidden = false;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("submitBtn");
+        btn.disabled = true;
+        btn.textContent = "Kutilmoqda...";
+        alertEl.hidden = true;
+
+        try {
+          await AcademyAuth.login(
+            document.getElementById("email").value.trim(),
+            document.getElementById("password").value
+          );
+          window.location.href = "index.html";
+        } catch (err) {
+          alertEl.textContent = err.message || "Login yoki parol noto'g'ri";
+          alertEl.hidden = false;
+          btn.disabled = false;
+          btn.textContent = "Kirish";
+        }
+      });
+
+      if (AcademyAuth.isConfigured()) {
+        AcademyAuth.getClient()?.auth.getSession().then(({ data }) => {
+          if (data.session) window.location.href = "index.html";
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
